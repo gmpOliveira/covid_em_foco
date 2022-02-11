@@ -6,10 +6,14 @@ const CidadeController = require('./controllers/CidadeController');
 const MasterController = require('./controllers/MasterController');
 const MoradorController = require('./controllers/MoradorController');
 const VacinaController = require('./controllers/VacinaController');
+const LoginController = require('./controllers/LoginController');
 
 const auth = require('./middlewares/auth');
 
 const routes = express.Router();
+
+//Login
+routes.post('/login', LoginController.login);
 
 //Adm
 routes.get('/adm/index/:admId', auth, AdmController.indexById);
