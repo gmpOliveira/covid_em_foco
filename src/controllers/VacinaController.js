@@ -65,6 +65,7 @@ module.exports = {
         return res.status(200).json({ vacina });
 
       } catch (error) {
+        console.log(error);
         return res.status(500).json({ msg: 'Erro desconhecido' });
       }
     } else return res.status(401).json({ msg: 'Token Invalid' });

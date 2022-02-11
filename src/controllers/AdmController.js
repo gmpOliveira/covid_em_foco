@@ -59,6 +59,7 @@ module.exports = {
         return res.status(200).json({ adm });
 
       } catch (error) {
+        console.log(error);
         return res.status(500).json({ msg: 'Validation fails' });
       }
     } else return res.status(401).json({ msg: 'Token Invalid' });

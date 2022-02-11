@@ -79,6 +79,7 @@ module.exports = {
       return res.status(200).json({ master, token: generateToken({ id: master.id, level: 'master' }) });
 
     } catch (error) {
+      console.log(error);
       return res.status(500).json({ msg: 'Erro desconhecido' });
     }
   },
