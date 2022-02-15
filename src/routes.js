@@ -30,8 +30,8 @@ routes.put('/boletim/update', auth, BoletimController.update);
 routes.delete('/boletim/delete/:boletimId', auth, BoletimController.delete);
 
 //Cidade
-routes.get('/cidade/index/:codigo_ibge', auth, CidadeController.indexById);
-routes.get('/cidade/index/', auth, CidadeController.index);
+routes.get('/cidade/index/:codigo_ibge', CidadeController.indexById);
+routes.get('/cidade/index/', CidadeController.index);
 routes.post('/cidade/', auth, CidadeController.store);
 routes.put('/cidade/update', auth, CidadeController.update);
 routes.delete('/cidade/delete/:codigo_ibge', auth, CidadeController.delete);
