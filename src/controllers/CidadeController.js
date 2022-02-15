@@ -4,7 +4,6 @@ const { MASTER_LEVEL } = require('../config/token');
 
 module.exports = {
   async index(req, res) {
-    if (req.level === MASTER_LEVEL) {// não colocar autenticação
       try {
         const cidade = await Cidade.findAll();
         if (cidade.length == 0)
@@ -14,11 +13,9 @@ module.exports = {
       } catch (error) {
         return res.status(500).json({ msg: 'Validation fails' });
       }
-    } else return res.status(401).json({ msg: 'Token Invalid' });
   },
 
   async indexById(req, res) {
-    if (req.level === MASTER_LEVEL) {
       const { codigo_ibge } = req.params;
 
       if (!codigo_ibge || codigo_ibge == null || codigo_ibge == undefined)
@@ -34,7 +31,6 @@ module.exports = {
       } catch (error) {
         return res.status(500).json({ msg: 'Validation fails' });
       }
-    } else return res.status(401).json({ msg: 'Token Invalid' });
   },
 
   async store(req, res) {
