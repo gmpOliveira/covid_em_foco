@@ -21,16 +21,15 @@ module.exports = {
   },
   //get geral por data
 
-  async indexById(req, res) { //data como parametro
-    const { boletimId } = req.params;
+  async indexByCodigoIbge(req, res) { //data como parametro
+    const { codigo_ibge } = req.params;
 
-    if (!boletimId || boletimId == null || boletimId == undefined)
-      return res.status(400).json({ msg: 'boletim is invalid' });
+    if (!codigo_ibge || codigo_ibge == null || codigo_ibge == undefined)
+      return res.status(400).json({ msg: 'codigo_ibge is invalid' });
 
     try {
-      const boletim = await Boletim.findByPk(boletimId, {
-        include: { association: 'cidade' },
-      });
+      const boletim = await Boletim.findAll({ where: {codigo_ibge: codigo_ibge}}, 
+        {include: { association: 'cidade' }});
       if (!boletim)
         return res.status(404).json({ msg: 'Boletim not found' })
 
