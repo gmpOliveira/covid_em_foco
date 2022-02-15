@@ -23,7 +23,7 @@ routes.put('/adm/update', auth, AdmController.update);
 routes.delete('/adm/delete/:admId', auth, AdmController.delete);
 
 //Boletim
-routes.get('/boletim/index/:boletimId', BoletimController.indexById);
+routes.get('/boletim/index/:codigo_ibge', BoletimController.indexByCodigoIbge);
 routes.get('/boletim/index/date/:data_boletim', BoletimController.indexByDate);
 routes.post('/boletim/', auth, BoletimController.store);
 routes.put('/boletim/update', auth, BoletimController.update);
