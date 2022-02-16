@@ -50,14 +50,8 @@ module.exports = {
         return res.status(400).json({ msg: 'cep is invalid' });
       if (!data_boletim || data_boletim == null || data_boletim == undefined)
         return res.status(400).json({ msg: 'data_boletim is invalid' });
-      if (!confirmados_diarios || confirmados_diarios == null || confirmados_diarios == undefined)
-      return res.status(400).json({ msg: 'confirmados_diarios is invalid' });
-      if (!obitos_diarios || obitos_diarios == null || obitos_diarios == undefined)
-      return res.status(400).json({ msg: 'obitos_diarios is invalid' });
-      if (!vacinados_diarios || vacinados_diarios == null || vacinados_diarios == undefined)
-      return res.status(400).json({ msg: 'vacinados_diarios is invalid' });
       if (!status_diario || status_diario == null || status_diario == undefined)
-      return res.status(400).json({ msg: 'status_diario is invalid' });
+        return res.status(400).json({ msg: 'status_diario is invalid' });
 
       try {
         const cidade = await Cidade.findByPk(codigo_ibge);
@@ -109,14 +103,8 @@ module.exports = {
         return res.status(400).json({ msg: 'Cep is invalid' });
       if (!data_boletim || data_boletim == null || data_boletim == undefined)
         return res.status(400).json({ msg: 'data_boletim is invalid' });
-      if (!confirmados_diarios || confirmados_diarios == null || confirmados_diarios == undefined)
-      return res.status(400).json({ msg: 'confirmados_diarios is invalid' });
-      if (!obitos_diarios || obitos_diarios == null || obitos_diarios == undefined)
-      return res.status(400).json({ msg: 'obitos_diarios is invalid' });
-      if (!vacinados_diarios || vacinados_diarios == null || vacinados_diarios == undefined)
-      return res.status(400).json({ msg: 'vacinados_diarios is invalid' });
       if (!status_diario || status_diario == null || status_diario == undefined)
-      return res.status(400).json({ msg: 'status_diario is invalid' });
+        return res.status(400).json({ msg: 'status_diario is invalid' });
 
       try {
         const boletim = await Boletim.findByPk(boletimId);
