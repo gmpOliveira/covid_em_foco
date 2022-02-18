@@ -52,8 +52,6 @@ module.exports = {
         return res.status(400).json({ msg: 'nome is invalid' });
       if (!data_nascimento || data_nascimento == null || data_nascimento == undefined)
         return res.status(400).json({ msg: 'data_nascimento is invalid' });
-      if (!is_obito || is_obito == null || is_obito == undefined)
-      return res.status(400).json({ msg: 'is_obito is invalid' });
 
       try {
         const cidade = await Cidade.findByPk(codigo_ibge);
